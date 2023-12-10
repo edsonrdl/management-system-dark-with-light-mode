@@ -16,7 +16,7 @@
         <aside>
             <div class="top">
                 <div class="logo">
-                    <img src="./imagens/logo-editado-sem-nome-removebg-preview (1).png" alt="">
+                    <img src="./imagens/sem fundo ASI CODE LOGO-PhotoRoom.png-PhotoRoom.png" alt="">
                     <h2>ASI<span class="danger">CODE</span></h2>
                 </div>
                 <div class="close" id="close-btn">
@@ -24,13 +24,15 @@
                         close
                     </span>
                 </div>
-              
+
             </div>
             <div class="sidebar">
-                <a href="#"><span class="material-symbols-outlined">grid_view</span>
+                <a onclick="showContentMain('dashboard-content')" href="#"><span
+                        class="material-symbols-outlined">grid_view</span>
                     <h3>Dashboard</h3>
                 </a>
-                <a href="#"><span class="material-symbols-outlined">orders</span>
+                <a onclick="showContentMain('orders-content')" href="#"><span
+                        class="material-symbols-outlined">orders</span>
                     <h3>Pedidos</h3>
                 </a>
                 <a href="#"><span class="material-symbols-outlined">person</span>
@@ -51,117 +53,155 @@
             </div>
         </aside>
         <main>
-            <h1>Dashboard</h1>
-            <div class="date">
-                <input type="date">
-            </div>
-            <div class="insigths">
-                <div class="sales">
-                    <span class="material-symbols-outlined">monitoring</span>
-                    <div class="middle">
-                        <div class="left">
-                            <h3>Total Sales</h3>
-                            <h1>R$:50,00</h1>
-                        </div>
-                        <div class="progress">
-                            <svg>
-                                <circle cx="38" cy="38" r="36"></circle>
-                            </svg>
-                            <div class="number">
-                                <p>81%</p>
+            <div id="dashboard-content" class="main-contant">
+                <h1>Dashboard</h1>
+                <div class="date">
+                    <h1 id="data-atual" class="date-atual"></h1>
+                </div>
+                <div class="insigths">
+                    <div class="sales">
+                        <span class="material-symbols-outlined">monitoring</span>
+                        <div class="middle">
+                            <div class="left">
+                                <h3>Total Sales</h3>
+                                <h1>R$:50,00</h1>
+                            </div>
+                            <div class="progress">
+                                <div class="circular-progress-sales">
+                                    <div class="progress-value-sales">
+                                        <p>0%</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        <small class="text-muted">Last 24 hours</small>
                     </div>
-                    <small class="text-muted">Last 24 hours</small>
-                </div>
-                <div class="expenses">
-                    <span class="material-symbols-outlined">
-                        bar_chart
-                    </span>
-                    <div class="middle">
-                        <div class="left">
-                            <h3>Total Expenses</h3>
-                            <h1>R$:20,00</h1>
-                        </div>
-                        <div class="progress">
-                            <svg>
-                                <circle cx="38" cy="38" r="36">
-                                </circle>
-                            </svg>
-                            <div class="number">
-                                <p>62%</p>
+                    <div class="expenses">
+                        <span class="material-symbols-outlined">
+                            bar_chart
+                        </span>
+                        <div class="middle">
+                            <div class="left">
+                                <h3>Total Expenses</h3>
+                                <h1>R$:20,00</h1>
+                            </div>
+                            <div class="progress">
+                                <div class="circular-progress-expenses">
+                                    <div class="progress-value-expenses">
+                                        <p>0%</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        <small class="text-muted">Last 24 hours</small>
                     </div>
-                    <small class="text-muted">Last 24 hours</small>
-                </div>
-                <div class="income">
-                    <span class="material-symbols-outlined">
-                        stacked_line_chart
-                    </span>
-                    <div class="middle">
-                        <div class="left">
-                            <h3>Total Income</h3>
-                            <h1>R$:20.00</h1>
-                        </div>
-                        <div class="progress">
-                            <svg>
-                                <circle cx="38" cy="38" r="36">
-                                </circle>
-                            </svg>
-                            <div class="number">
-                                <p>44%</p>
+                    <div class="income">
+                        <span class="material-symbols-outlined">
+                            stacked_line_chart
+                        </span>
+                        <div class="middle">
+                            <div class="left">
+                                <h3>Total Income</h3>
+                                <h1>R$:20.00</h1>
+                            </div>
+                            <div class="progress">
+                                <div class="circular-progress-income">
+                                    <div class="progress-value-income">
+                                        <p>0%</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        <small class="text-muted">Last 24 hours</small>
                     </div>
-                    <small class="text-muted">Last 24 hours</small>
-                </div>
-             
-            </div>
-            <div class="recent-orders">
-                <h2>Recent Order</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Nome dos Produtos</th>
-                            <th>Número do Produto</th>
-                            <th>Pagamento</th>
-                            <th>Status</th>
-                        </tr>
-                    <tbody>
-                        <tr>
-                            <td>Foldable Mini Drone</td>
-                            <td>85631</td>
-                            <td>Due</td>
-                            <td class="warning">Peding</td>
-                            <td class="primary">Details</td>
-                        </tr>
-                    </tbody>
-                    <tbody>
-                        <tr>
-                            <td>Foldable Mini Drone</td>
-                            <td>85631</td>
-                            <td>Due</td>
-                            <td class="warning">Peding</td>
-                            <td class="primary">Details</td>
-                        <tr>
-                            <td>Foldable Mini Drone</td>
-                            <td>85631</td>
-                            <td>Due</td>
-                            <td class="warning">Peding</td>
-                            <td class="primary">Details</td>
-                        <tr>
-                            <td>Foldable Mini Drone</td>
-                            <td>85631</td>
-                            <td>Due</td>
-                            <td class="warning">Peding</td>
-                            <td class="primary">Details</td>
-                        </tr>
-                    </tbody>
-                    </thead>
-                </table>
-                <a href="#">Show All</a>
 
+                </div>
+                <div class="recent-orders">
+                    <h2>Recent Order</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nome dos Produtos</th>
+                                <th>Número do Produto</th>
+                                <th>Pagamento</th>
+                                <th>Status</th>
+                            </tr>
+                        <tbody>
+                            <tr>
+                                <td>Foldable Mini Drone</td>
+                                <td>85631</td>
+                                <td>Due</td>
+                                <td class="warning">Peding</td>
+                                <td class="primary">Details</td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td>Foldable Mini Drone</td>
+                                <td>85631</td>
+                                <td>Due</td>
+                                <td class="warning">Peding</td>
+                                <td class="primary">Details</td>
+                            <tr>
+                                <td>Foldable Mini Drone</td>
+                                <td>85631</td>
+                                <td>Due</td>
+                                <td class="warning">Peding</td>
+                                <td class="primary">Details</td>
+                            <tr>
+                                <td>Foldable Mini Drone</td>
+                                <td>85631</td>
+                                <td>Due</td>
+                                <td class="warning">Peding</td>
+                                <td class="primary">Details</td>
+                            </tr>
+                        </tbody>
+                        </thead>
+                    </table>
+                    <a href="#">Show All</a>
+
+                </div>
+            </div>
+            <div id="orders-content" class="main-contant disabled-content">
+                <div class="all-orders">
+                    <h1>Pedidos</h1>
+                    <div class="top-all-orders">
+                        <h2>Selecione a data dos pedidos</h2>
+                        <input type="date" class="dateFilter" onchange="filterOrderCalendar(this.value)">
+                    </div>
+                    <div class="all-order-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>CLIENTE</th>
+                                    <th>NÚMERO DO PEDIDO</th>
+                                    <th>DATA/HORA</th>
+                                    <th>STATUS</th>
+                                </tr>
+                            <tbody id="tbody-orders-date-all">
+                            </tbody>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+                <div class="items-order">
+                    <h1>Itens do Pedido</h1>
+                    <div id="total-order-value"></div>
+                    <div class="items-all-order-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Número de identificação</th>
+                                    <th>Nome item</th>
+                                    <th>Valor</th>
+                                    <th>Quantidade</th>
+                                </tr>
+                            <tbody id="tbody-orders-items-all">
+                            </tbody>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
             </div>
         </main>
         <div class="right">

@@ -1,17 +1,18 @@
 :root {
-    --color-primary: #7380ec;
-    --color-danger: #5f5f5f;
+    --color-phlox: #BA58EF;
+    --color-back: #000000;
+    --color-silver:#CBCBCB;
+    --color-dim-gray: #727272;
     --color-success: #41f1b6;
     --color-warning: #ffbb55;
-    --color-white: #fFF;
+    --color-white: #F6F5F7;
     --color-info-dark: #7d8da1;
     --color-info-light: #dce1eb;
     --color-dark: #363949;
     --color-light: rgba(132, 139, 200, 0.18);
-    --color-primary-variant: #111e88;
+    --color-phlox-variant: #111e88;
     --color-dark-variant: #677483;
     --color-background: #f6f6f9;
-
     --card-border-radius: 2rem;
     --border-radius-1: 0.4rem;
     --border-radius-2: 0.8rem;
@@ -116,11 +117,11 @@ b {
 }
 
 .primary {
-    color: var(--color-primary);
+    color: var(--color-phlox);
 }
 
 .danger {
-    color: var(--color-danger);
+    color: var(--color-dim-gray);
 }
 
 .success {
@@ -154,8 +155,17 @@ aside .logo {
 aside .logo img {
     width: 4rem;
     height: 4rem;
+    clip-path: circle();
+    background-color: var(--color-silver);
 }
+.logo h2{
+    color: var(--color-white);
+    text-shadow: 1px 1px 2px #000;
+}
+.logo h2 span{
+    color: var(--color-phlox);
 
+}
 aside .close {
     display: none;
 }
@@ -199,7 +209,7 @@ aside .sidebar a:last-child {
 
 aside .sidebar a.active {
     background: var(--color-light);
-    color: var(--color-primary);
+    color: var(--color-phlox);
     margin-left: 0;
 
 }
@@ -208,16 +218,16 @@ aside .sidebar a.active:before {
     content: "";
     width: 6px;
     height: 100%;
-    background: var(--color-primary);
+    background: var(--color-phlox);
 }
 
 aside .sidebar a.active span {
-    color: var(--color-primary);
+    color: var(--color-phlox);
     margin-left: calc(1rem - 3px);
 }
 
 aside .sidebar a:hover {
-    color: var(--color-primary);
+    color: var(--color-phlox);
 }
 
 aside .sidebar a:hover span {
@@ -225,7 +235,7 @@ aside .sidebar a:hover span {
 }
 
 aside .sidebar .message-count {
-    background: var(--color-danger);
+    background: var(--color-dim-gray);
     color: var(--color-white);
     padding: 2px 10px;
     font-size: 11px;
@@ -249,7 +259,9 @@ main .date input[type="date"] {
     background: transparent;
     color: var(--color-dark);
 }
-
+.disabled-content{
+    display: none;
+}
 main .insigths {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -270,7 +282,7 @@ main .insigths > div:hover {
 }
 
 main .insigths > div span {
-    background: var(--color-primary);
+    background: var(--color-phlox);
     padding: 0.5rem;
     font-size: 2rem;
     border-radius: 50%;
@@ -278,7 +290,7 @@ main .insigths > div span {
 }
 
 main .insigths > div.expenses span {
-    background: var(--color-danger);
+    background: var(--color-dim-gray);
 
 }
 
@@ -288,7 +300,7 @@ main .insigths > div.income span {
 }
 
 main .insigths > div.expenses span {
-    background: var(--color-danger);
+    background: var(--color-dim-gray);
 
 }
 
@@ -304,11 +316,47 @@ main .insigths h3 {
 
 }
 
-main .insigths .progress {
+.progress{
+    display: flex;
     position: relative;
     width: 92px;
     height: 92px;
     border-radius: 50%;
+    background: transparent;
+    row-gap: 30px;
+    flex-direction: column;
+    align-items: center;
+}
+.circular-progress-sales,.circular-progress-expenses,.circular-progress-income{
+    position: relative;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    background: conic-gradient(#BA58EF 3.6deg,#ffffff 0deg);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.circular-progress-sales::before,.circular-progress-expenses::before,.circular-progress-income::before{
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: var(--color-white);
+}
+main .insigths .progress .progress-value-sales,.progress-value-expenses,.progress-value-income{
+    position: absolute;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--color-primary);
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 main .insigths svg {
@@ -318,7 +366,7 @@ main .insigths svg {
 
 main .insigths svg circle {
     fill: none;
-    stroke: var(--color-primary);
+    stroke: var(--color-phlox);
     stroke-width: 14;
     stroke-linecap: round;
     transform: translate(5px, 5px);
@@ -390,9 +438,176 @@ main .recent-orders a {
     text-align: center;
     display: block;
     margin: 1rem auto;
+    color: var(--color-phlox);
+}
+
+main .all-orders {
+    margin-top: 2rem;
+}
+.top-all-orders{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: last baseline;
+    justify-content: flex-start;
+    gap: 10px;
+}
+.top-all-orders .dateFilter {
+    display: inline-block;
+    margin-bottom: 0.8rem;
+    padding: 0.5rem 1.6rem;
+    background: var(--color-light);
+    border-radius: var(--border-radius-1);
+    box-shadow: var(--box-shadow);
+    color: var(--color-dark-variant);
+    cursor: pointer;     
+}
+
+
+.top-all-orders .dateFilter input[type="date"] {
+    background: transparent;
+  
+}
+main .all-order-table {
+    margin-top: 2rem;
+    min-height:20px;
+    max-height: 400px;
+    overflow: auto;
+    background: var(--color-white);
+    width: 100%;
+    border-radius: var(--card-border-radius);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+
+}
+main .all-order-table:hover {
+    box-shadow: none;
+}
+
+
+main .all-orders h2 {
+    margin-bottom: 0.8rem;
+}
+
+main .all-orders table {
+    background: transparent;
+    width: 100%;
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    text-align: center;
+    border-collapse: collapse;
+
+
+}
+
+main .all-orders table:hover {
+    box-shadow: none;
+}
+.all-order-table thead th {
+    background-color: var(--color-white);
+    height: 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  .all-order-table tbody {
+    overflow-y: auto;
+    position: relative;
+  }
+.all-order-table tbody tr {
+    border-bottom: 1px solid #ddd;
+  }
+  
+main table tbody td {
+    height: 2.8rem;
+    border-bottom: 1px solid var(--color-light);
+    color: var(--color-dark-variant);
+    padding: 8px;
+}
+
+main .recent-orders a {
+    text-align: center;
+    display: block;
+    margin: 1rem auto;
     color: var(--color-primary);
 }
 
+/*============ tabela de itens ==============*/
+
+main .items-order {
+    margin-top: 2rem;
+}
+#items-order{
+    font-size:1.5rem;
+    background: transparent;
+}
+.items-all-order-table {
+    margin-top: 2rem;
+    min-height:20px;
+    max-height: 400px;
+    overflow: auto;
+    background: var(--color-white);
+    width: 100%;
+    border-radius: var(--card-border-radius);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+
+}
+main .items-all-order-table:hover {
+    box-shadow: none;
+}
+
+
+main .items-order h2 {
+    margin-bottom: 0.8rem;
+}
+
+main .items-order table {
+    background: transparent;
+    width: 100%;
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    text-align: center;
+    border-collapse: collapse;
+
+
+}
+
+main .items-order table:hover {
+    box-shadow: none;
+}
+main .items-all-order-table thead th {
+    background-color: var(--color-white);
+    height: 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  .items-all-order-table tbody {
+    overflow-y: auto;
+    position: relative;
+  }
+.items-all-order-table tbody tr {
+    border-bottom: 1px solid #ddd;
+
+  }
+
+main .items-orders a {
+    text-align: center;
+    display: block;
+    margin: 1rem auto;
+    color: var(--color-primary);
+}
+.item-button{
+    cursor: pointer;
+    color: var(--color-secundary);
+}
+.item-button:hover{
+    color: var(--color-secundary-hover);
+   
+}
 .right {
     margin-top: 1.4rem;
 }
@@ -427,7 +642,7 @@ main .recent-orders a {
 }
 
 .right .theme-toggler span.active {
-    background: var(--color-primary);
+    background: var(--color-phlox);
     columns: white;
     border-radius: var(--border-radius-1);
 }
@@ -497,12 +712,12 @@ main .recent-orders a {
     padding: 0.6rem;
     color: var(--color-white);
     border-radius: 50%;
-    background: var(--color-primary);
+    background: var(--color-phlox);
     display: flex;
 }
 
 .right .sales-analytics .item.offline .icon {
-    background: var(--color-danger);
+    background: var(--color-dim-gray);
 }
 
 .right .sales-analytics .item.customers .icon {
