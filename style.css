@@ -264,13 +264,13 @@ main .date input[type="date"] {
 }
 main .insigths {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.6rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
 }
 
 main .insigths > div {
     background: var(--color-white);
-    padding: var(--card-padding);
+    padding: 10px;
     border-radius: var(--card-border-radius);
     margin-top: 1rem;
     box-shadow: var(--box-shadow);
