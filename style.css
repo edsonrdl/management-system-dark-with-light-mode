@@ -412,10 +412,11 @@ main .insigths small {
 }
 .container-recent-orders-top-client{
     display: grid;
-    gap: 10px;
-    grid-template-columns:2fr 3fr ;
+    gap: 50px;
+    grid-template-columns:2fr 3fr;
+    background-color: transparent;
 }
-main .recent-orders {
+main .recent-orders,main .top-clients,main .all-orders {
     margin-top: 1rem;
 
 }
@@ -423,7 +424,7 @@ main .recent-orders {
 .table {
     margin-top: 2rem;
     min-height:20px;
-    max-height: 400px;
+    max-height: 350px;
     overflow: auto;
     background: var(--color-white);
     width: 100%;
@@ -431,13 +432,12 @@ main .recent-orders {
     text-align: center;
     box-shadow: var(--box-shadow);
     transition: all 300ms ease;
-
 }
-main .recent-orders h2 {
+main .recent-orders h2,main .top-clients h2 ,main .all-orders h2{
     margin-bottom: 0.8rem;
 }
 
-main .recent-orders table {
+main .recent-orders table,main .top-clients table,main .all-orders table{
     background: transparent;
     width: 100%;
     border-radius: var(--card-border-radius);
@@ -448,86 +448,24 @@ main .recent-orders table {
 
 }
 
-main .recent-orders table:hover {
+main .table:hover,main .table:hover,main .all-order-table:hover,main .all-orders table:hover {
     box-shadow: none;
 }
-.recent-orders thead th {
+.recent-orders thead th,.top-clients thead th,.all-order-table thead th {
     background-color: var(--color-white);
     height: 40px;
     position: sticky;
     top: 0;
-    z-index: 1;
+    z-index: 5;
   }
-  .recent-orders tbody {
+  .recent-orders tbody, .top-clients tbody ,  .all-order-table tbody{
     overflow-y: auto;
     position: relative;
   }
-  .recent-orders tbody tr {
+  .recent-orders tbody tr,  .top-clients tbody tr,.all-order-table tbody tr {
     border-bottom: 1px solid #ddd;
   }
   
-main table tbody td {
-    background-color: var(--color-white);
-    height: 40px;
-    position: sticky;
-    top: 0;
-    z-index: 1;
-}
-
-main .recent-orders a {
-    text-align: center;
-    display: block;
-    margin: 1rem auto;
-    color: var(--color-phlox);
-}
-
-main .top-clients {
-    margin-top: 1rem;
-
-}
-
-main .top-clients h2 {
-    margin-bottom: 0.8rem;
-}
-
-main .top-clients table {
-    background: transparent;
-    width: 100%;
-    border-radius: var(--card-border-radius);
-    padding: var(--card-padding);
-    text-align: center;
-    border-collapse: collapse;
-    transition: all 300ms ease;
-
-}
-
-main .top-clients table:hover {
-    box-shadow: none;
-}
-.top-clients thead th {
-    background-color: var(--color-white);
-    height: 40px;
-    position: sticky;
-    top: 0;
-    z-index: 1;
-  }
-  .top-clients tbody {
-    overflow-y: auto;
-    position: relative;
-  }
-  .top-clients tbody tr {
-    border-bottom: 1px solid #ddd;
-  }
-main .top-clients a {
-    text-align: center;
-    display: block;
-    margin: 1rem auto;
-    color: var(--color-phlox);
-}
-
-main .all-orders {
-    margin-top: 1rem;
-}
 .top-all-orders{
     display: flex;
     flex-direction: row;
@@ -565,63 +503,20 @@ main .all-order-table {
     transition: all 300ms ease;
 
 }
-main .all-order-table:hover {
-    box-shadow: none;
-}
 
 
-main .all-orders h2 {
-    margin-bottom: 0.8rem;
-}
-
-main .all-orders table {
-    background: transparent;
-    width: 100%;
-    border-radius: var(--card-border-radius);
-    padding: var(--card-padding);
-    text-align: center;
-    border-collapse: collapse;
-    transition: all 300ms ease;
-
-}
-
-main .all-orders table:hover {
-    box-shadow: none;
-}
-.all-order-table thead th {
+  main table tbody td {
     background-color: var(--color-white);
     height: 40px;
     position: sticky;
     top: 0;
     z-index: 1;
-  }
-  .all-order-table tbody {
-    overflow-y: auto;
-    position: relative;
-  }
-.all-order-table tbody tr {
-    border-bottom: 1px solid #ddd;
-  }
-  
-main table tbody td {
-    height: 2.8rem;
-    border-bottom: 1px solid var(--color-light);
-    color: var(--color-dark-variant);
-    padding: 8px;
 }
-
-main .recent-orders a {
-    text-align: center;
-    display: block;
-    margin: 1rem auto;
-    color: var(--color-primary);
-}
-
-/*============ tabela de itens ==============*/
 
 main .productss-order {
     margin-top: 2rem;
 }
+
 #items-order{
     font-size:1.5rem;
     background: transparent;
@@ -676,14 +571,9 @@ main .productss-all-order-table thead th {
 .productss-all-order-table tbody tr {
     border-bottom: 1px solid #ddd;
 
-  }
-
-main .productss-orders a {
-    text-align: center;
-    display: block;
-    margin: 1rem auto;
-    color: var(--color-primary);
 }
+
+
 .products-button{
     cursor: pointer;
     color: var(--color-secundary);
