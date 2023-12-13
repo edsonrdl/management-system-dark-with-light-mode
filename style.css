@@ -252,7 +252,10 @@ main .date {
     background: var(--color-light);
     border-radius: var(--border-radius-1);
     margin-top: 1rem;
-    padding: 0.5rem 1.6rem;
+    padding: 0.3rem 1.3rem;
+}
+main .date h1 {
+font-size: 1rem;
 }
 
 main .date input[type="date"] {
@@ -264,8 +267,8 @@ main .date input[type="date"] {
 }
 main .insigths {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
 }
 
 main .insigths > div {
@@ -307,7 +310,7 @@ main .insigths > div.expenses span {
 main .insigths>div .middle {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 10px;
 }
 
 main .insigths h3 {
@@ -315,12 +318,16 @@ main .insigths h3 {
     font-size: 1rem;
 
 }
+main .insigths h1 {
+    font-size: 1rem;
+
+}
 
 .progress{
     display: flex;
     position: relative;
-    width: 92px;
-    height: 92px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     background: transparent;
     row-gap: 30px;
@@ -329,8 +336,8 @@ main .insigths h3 {
 }
 .circular-progress-sales,.circular-progress-expenses,.circular-progress-income{
     position: relative;
-    width: 92px;
-    height: 92px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     background: conic-gradient(#BA58EF 3.6deg,#ffffff 0deg);
     align-items: center;
@@ -340,8 +347,8 @@ main .insigths h3 {
 .circular-progress-sales::before,.circular-progress-expenses::before,.circular-progress-income::before{
     content: "";
     position: absolute;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     background-color: var(--color-white);
 }
@@ -400,26 +407,43 @@ main .insigths .progress .number {
 }
 
 main .insigths small {
-    margin-top: 1.6rem;
+    margin-top: 1rem;
     display: block;
 }
-
+.container-recent-orders-top-client{
+    display: grid;
+    gap: 10px;
+    grid-template-columns:2fr 3fr ;
+}
 main .recent-orders {
-    margin-top: 2rem;
+    margin-top: 1rem;
 
 }
 
+.table {
+    margin-top: 2rem;
+    min-height:20px;
+    max-height: 400px;
+    overflow: auto;
+    background: var(--color-white);
+    width: 100%;
+    border-radius: var(--card-border-radius);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+
+}
 main .recent-orders h2 {
     margin-bottom: 0.8rem;
 }
 
 main .recent-orders table {
-    background: var(--color-white);
+    background: transparent;
     width: 100%;
     border-radius: var(--card-border-radius);
     padding: var(--card-padding);
     text-align: center;
-    box-shadow: var(--box-shadow);
+    border-collapse: collapse;
     transition: all 300ms ease;
 
 }
@@ -427,11 +451,27 @@ main .recent-orders table {
 main .recent-orders table:hover {
     box-shadow: none;
 }
-
+.recent-orders thead th {
+    background-color: var(--color-white);
+    height: 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  .recent-orders tbody {
+    overflow-y: auto;
+    position: relative;
+  }
+  .recent-orders tbody tr {
+    border-bottom: 1px solid #ddd;
+  }
+  
 main table tbody td {
-    height: 2.8rem;
-    border-bottom: 1px solid var(--color-light);
-    color: var(--color-dark-variant);
+    background-color: var(--color-white);
+    height: 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 
 main .recent-orders a {
@@ -441,8 +481,52 @@ main .recent-orders a {
     color: var(--color-phlox);
 }
 
+main .top-clients {
+    margin-top: 1rem;
+
+}
+
+main .top-clients h2 {
+    margin-bottom: 0.8rem;
+}
+
+main .top-clients table {
+    background: transparent;
+    width: 100%;
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    text-align: center;
+    border-collapse: collapse;
+    transition: all 300ms ease;
+
+}
+
+main .top-clients table:hover {
+    box-shadow: none;
+}
+.top-clients thead th {
+    background-color: var(--color-white);
+    height: 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  .top-clients tbody {
+    overflow-y: auto;
+    position: relative;
+  }
+  .top-clients tbody tr {
+    border-bottom: 1px solid #ddd;
+  }
+main .top-clients a {
+    text-align: center;
+    display: block;
+    margin: 1rem auto;
+    color: var(--color-phlox);
+}
+
 main .all-orders {
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 .top-all-orders{
     display: flex;
@@ -497,7 +581,7 @@ main .all-orders table {
     padding: var(--card-padding);
     text-align: center;
     border-collapse: collapse;
-
+    transition: all 300ms ease;
 
 }
 
@@ -731,7 +815,7 @@ text-align: center;
     align-items: center;
     gap: 1rem;
     margin-bottom: 0.7rem;
-    padding: 1.4rem var(--card-padding);
+    padding: 5px;
     border-radius: var(--border-radius-3);
     box-shadow: var(--box-shadow);
     transition: all 300ms ease;
@@ -792,10 +876,14 @@ text-align: center;
         grid-template-columns: 1fr;
         gap: 0;
     }
+.container-recent-orders-top-client{
+    width: 100%;
+    height: 100%;
+    display: flex;
 
+}
     main .recent-orders {
         width: 94%;
-        position: absolute;
         left: 50%;
         transform: translateX(-50%);
         margin: 2rem 0 0 8.8rem;
