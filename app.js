@@ -43,62 +43,36 @@ atualizarData();
    contentMainActive.classList.remove('disabled-content');
 }
 
+const valueProgressSales=90;
+const valueProgressExpenses=50;
+const valueProgressIncome=30;
+const valueProgressCanceled=3;
+const valueProgressProductivity=23;
+const createCircularProgress = (circularProgressSelector, progressValueSelector, progressEndValue) => {
+  let circularProgress = document.querySelector(circularProgressSelector);
+  let progressValue = document.querySelector(progressValueSelector);
 
- 
- const  graphicSales=()=>{
-   let circularPorgress =document.querySelector(".circular-progress-sales"),progressValue=document.querySelector(".progress-value-sales");
- 
-   let progressStartValue=0,
-   progressEndValue=90,
-   speed=100;
-   let progress =setInterval(()=>{
-     progressStartValue++;
-   
-     progressValue.textContent=`${progressStartValue}%`;
-     circularPorgress.style.background=`conic-gradient( #BA58EF ${progressStartValue * 3.6}deg ,#ffffff 0deg)`;
-     if(progressStartValue==progressEndValue){
-       clearInterval(progress);
-     }
-   },speed);
- }
+  let progressStartValue = 0;
+  let speed = 100;
 
- graphicSales();
+  let progress = setInterval(() => {
+    progressStartValue++;
 
- const  graphicExpenses=()=>{
-   let circularPorgress =document.querySelector(".circular-progress-expenses"),progressValue=document.querySelector(".progress-value-expenses");
- 
-   let progressStartValue=0,
-   progressEndValue=50,
-   speed=100;
-   let progress =setInterval(()=>{
-     progressStartValue++;
-   
-     progressValue.textContent=`${progressStartValue}%`;
-     circularPorgress.style.background=`conic-gradient( #BA58EF ${progressStartValue * 3.6}deg ,#ffffff 0deg)`;
-     if(progressStartValue==progressEndValue){
-       clearInterval(progress);
-     }
-   },speed);
- }
- graphicExpenses();
+    progressValue.textContent = `${progressStartValue}%`;
+    circularProgress.style.background = `conic-gradient( #BA58EF ${progressStartValue * 3.6}deg ,#ffffff 0deg)`;
 
- const  graphicIncome=()=>{
-   let circularPorgress =document.querySelector(".circular-progress-income"),progressValue=document.querySelector(".progress-value-income");
- 
-   let progressStartValue=0,
-   progressEndValue=30,
-   speed=100;
-   let progress =setInterval(()=>{
-     progressStartValue++;
-   
-     progressValue.textContent=`${progressStartValue}%`;
-     circularPorgress.style.background=`conic-gradient( #BA58EF ${progressStartValue * 3.6}deg ,#ffffff 0deg)`;
-     if(progressStartValue==progressEndValue){
-       clearInterval(progress);
-     }
-   },speed);
- }
- graphicIncome();
+    if (progressStartValue === progressEndValue) {
+      clearInterval(progress);
+    }
+  }, speed);
+};
+
+createCircularProgress(".circular-progress-sales", ".progress-value-sales", valueProgressSales);
+createCircularProgress(".circular-progress-expenses", ".progress-value-expenses", valueProgressExpenses);
+createCircularProgress(".circular-progress-income", ".progress-value-income", valueProgressIncome);
+createCircularProgress(".circular-progress-income", ".progress-value-canceled", valueProgressCanceled);
+createCircularProgress(".circular-progress-income", ".progress-value-productivity", valueProgressProductivity);
+
  
 //  Orders.forEach(order => {
 //     const tr=document.createElement('tr');

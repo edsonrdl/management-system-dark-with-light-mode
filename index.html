@@ -44,9 +44,6 @@
                 <a href="#"><span class="material-symbols-outlined">inventory_2</span>
                     <h3>Produtos</h3>
                 </a>
-                <a href="#"><span class="material-symbols-outlined">add</span>
-                    <h3>Adicionar Produtos</h3>
-                </a>
             </div>
         </aside>
         <main>
@@ -60,8 +57,8 @@
                         <span class="material-symbols-outlined">monitoring</span>
                         <div class="middle">
                             <div class="left">
-                                <h3>Total Sales</h3>
-                                <h1>R$:50,00</h1>
+                                <h3>Vendas</h3>
+                                <h1>R$:1.200,00</h1>
                             </div>
                             <div class="progress">
                                 <div class="circular-progress-sales">
@@ -71,7 +68,7 @@
                                 </div>
                             </div>
                         </div>
-                        <small class="text-muted">Last 24 hours</small>
+                        <small class="text-muted">Últimas 24 horas</small>
                     </div>
                     <div class="expenses">
                         <span class="material-symbols-outlined">
@@ -79,8 +76,8 @@
                         </span>
                         <div class="middle">
                             <div class="left">
-                                <h3>Total Expenses</h3>
-                                <h1>R$:20,00</h1>
+                                <h3>Despesas</h3>
+                                <h1>R$:730,00</h1>
                             </div>
                             <div class="progress">
                                 <div class="circular-progress-expenses">
@@ -90,7 +87,7 @@
                                 </div>
                             </div>
                         </div>
-                        <small class="text-muted">Last 24 hours</small>
+                        <small class="text-muted">Últimas 24 horas</small>
                     </div>
                     <div class="income">
                         <span class="material-symbols-outlined">
@@ -98,8 +95,8 @@
                         </span>
                         <div class="middle">
                             <div class="left">
-                                <h3>Total Income</h3>
-                                <h1>R$:20.00</h1>
+                                <h3>Renda</h3>
+                                <h1>R$:840.00</h1>
                             </div>
                             <div class="progress">
                                 <div class="circular-progress-income">
@@ -109,46 +106,45 @@
                                 </div>
                             </div>
                         </div>
-                        <small class="text-muted">Last 24 hours</small>
+                        <small class="text-muted">Últimas 24 horas</small>
                     </div>
-                    <div class="income">
+                    <div class="canceled">
                         <span class="material-symbols-outlined">
-                            stacked_line_chart
-                        </span>
+                            query_stats
+                            </span>
                         <div class="middle">
                             <div class="left">
-                                <h3>Total Income</h3>
-                                <h1>R$:20.00</h1>
+                                <h3>Pedidos Cancelados</h3>
                             </div>
                             <div class="progress">
-                                <div class="circular-progress-income">
-                                    <div class="progress-value-income">
+                                <div class="circular-progress-canceled">
+                                    <div class="progress-value-canceled">
                                         <p>0%</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <small class="text-muted">Last 24 hours</small>
+                        <small class="text-muted">Últimas 24 horas</small>
                     </div>
-                    <div class="income">
+                    <div class="productivity">
                         <span class="material-symbols-outlined">
-                            stacked_line_chart
-                        </span>
+                            monitoring
+                            </span>
                         <div class="middle">
                             <div class="left">
-                                <h3>Total Income</h3>
-                                <h1>R$:20.00</h1>
+                                <h3>Produtividade</h3>
                             </div>
                             <div class="progress">
-                                <div class="circular-progress-income">
-                                    <div class="progress-value-income">
+                                <div class="circular-progress-productivity">
+                                    <div class="progress-value-productivity">
                                         <p>0%</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <small class="text-muted">Last 24 hours</small>
+                        <small class="text-muted">Últimas 24 horas</small>
                     </div>
+                 
                 </div>
                 <div class="container-recent-orders-top-client">
                     <div class="recent-orders table">
@@ -164,7 +160,42 @@
                                 <tr>
                                     <td>Letícia</td>
                                     <td>856</td>
+                                    <td class="success">Concluído</td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>Eduardo</td>
+                                    <td>8466</td>
+                                    <td class="success">Concluído</td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>Letícia</td>
+                                    <td>6546</td>
                                     <td class="warning">Pendente</td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>Mily</td>
+                                    <td>456</td>
+                                    <td class="warning">Pendente</td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>Isabella</td>
+                                    <td>873564</td>
+                                    <td class="success">Concluído</td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>Letícia</td>
+                                    <td>856</td>
+                                    <td class="success">Concluído</td>
                                 </tr>
                             </tbody>
                             <tbody>
@@ -176,9 +207,9 @@
                             </tbody>
                             <tbody>
                                 <tr>
-                                    <td>Letícia</td>
-                                    <td>856</td>
-                                    <td class="warning">Pendente</td>
+                                    <td>Lucas</td>
+                                    <td>456</td>
+                                    <td class="canceled">Cancelado</td>
                                 </tr>
                             </tbody>
                             <tbody>
@@ -190,58 +221,23 @@
                             </tbody>
                             <tbody>
                                 <tr>
-                                    <td>Letícia</td>
-                                    <td>856</td>
+                                    <td>Douglas</td>
+                                    <td>865435</td>
+                                    <td class="canceled">Cancelado</td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>lucas</td>
+                                    <td>87656</td>
                                     <td class="warning">Pendente</td>
                                 </tr>
                             </tbody>
                             <tbody>
                                 <tr>
-                                    <td>Letícia</td>
-                                    <td>856</td>
-                                    <td class="warning">Pendente</td>
-                                </tr>
-                            </tbody>
-                            <tbody>
-                                <tr>
-                                    <td>Letícia</td>
-                                    <td>856</td>
-                                    <td class="warning">Pendente</td>
-                                </tr>
-                            </tbody>
-                            <tbody>
-                                <tr>
-                                    <td>Letícia</td>
-                                    <td>856</td>
-                                    <td class="warning">Pendente</td>
-                                </tr>
-                            </tbody>
-                            <tbody>
-                                <tr>
-                                    <td>Letícia</td>
-                                    <td>856</td>
-                                    <td class="warning">Pendente</td>
-                                </tr>
-                            </tbody>
-                            <tbody>
-                                <tr>
-                                    <td>Letícia</td>
-                                    <td>856</td>
-                                    <td class="warning">Pendente</td>
-                                </tr>
-                            </tbody>
-                            <tbody>
-                                <tr>
-                                    <td>Letícia</td>
-                                    <td>856</td>
-                                    <td class="warning">Pendente</td>
-                                </tr>
-                            </tbody>
-                            <tbody>
-                                <tr>
-                                    <td>Letícia</td>
-                                    <td>856</td>
-                                    <td class="warning">Pendente</td>
+                                    <td>Alice</td>
+                                    <td>65456</td>
+                                    <td class="success">Concluído</td>
                                 </tr>
                             </tbody>
                             </thead>
@@ -255,89 +251,102 @@
                                     <th>Cliente</th>
                                     <th>Número do Telefone</th>
                                     <th>E-mail</th>
+                                    <th>Quantidade Pedidos</th>
                                 </tr>
                             <tbody>
                                 <tr>
                                     <td>Alice</td>
                                     <td>+1 123-456-7890</td>
-                                    <td ">alice@example.com</td>
+                                    <td>alice@example.com</td>
+                                    <td>20</td>
                                 </tr>
                             </tbody>
                             <tbody>
                                 <tr>
                                     <td>Bob</td>
                                     <td>+1 987-654-3210</td>
-                                    <td ">bob@example.com</td>
+                                    <td>bob@example.com</td>
+                                    <td>18</td>
                                 </tr>
                             </tbody>
                             <tbody>
                                 <tr>
                                     <td>Charlie</td>
                                     <td>+1 555-123-4567</td>
-                                    <td ">charlie@example.com</td>
+                                    <td>charlie@example.com</td>
+                                    <td>17</td>
                                 </tr>
                             </tbody>
                             <tbody>
                                 <tr>
                                     <td>Diego</td>
                                     <td>+1 555-983-4457</td>
-                                    <td ">diego@example.com</td>
+                                    <td >diego@example.com</td>
+                                    <td>17</td>
                                 </tr>
                             </tbody>
                             <tbody>
                                 <tr>
-                                    <td>Diego</td>
-                                    <td>+1 555-983-4457</td>
-                                    <td ">diego@example.com</td>
+                                    <td>Pedro</td>
+                                    <td>+1 555-233-8857</td>
+                                    <td >pedro@example.com</td>
+                                    <td>17</td>
                                 </tr>
                             </tbody>
                             <tbody>
                                 <tr>
-                                    <td>Diego</td>
-                                    <td>+1 555-983-4457</td>
-                                    <td ">diego@example.com</td>
+                                    <td>João</td>
+                                    <td>+1 555-763-42357</td>
+                                    <td >joão@example.com</td>
+                                    <td>17</td>
                                 </tr>
                             </tbody>
                             <tbody>
                                 <tr>
-                                    <td>Diego</td>
-                                    <td>+1 555-983-4457</td>
-                                    <td ">diego@example.com</td>
+                                    <td>Lucas</td>
+                                    <td>+1 555-673-4457</td>
+                                    <td >lucas@example.com</td>
+                                    <td>16</td>
                                 </tr>
                             </tbody>
                             <tbody>
                                 <tr>
-                                    <td>Diego</td>
-                                    <td>+1 555-983-4457</td>
-                                    <td ">diego@example.com</td>
+                                    <td>Joice</td>
+                                    <td>+1 555-123-4457</td>
+                                    <td >joice@example.com</td>
+                                    <td>11</td>
                                 </tr>
                             </tbody>
                             <tbody>
                                 <tr>
-                                    <td>Diego</td>
-                                    <td>+1 555-983-4457</td>
-                                    <td ">diego@example.com</td>
+                                    <td>Felipe</td>
+                                    <td>+1 555-783-4457</td>
+                                    <td >felipe@example.com</td>
+                                    <td>8</td>
                                 </tr>
                             </tbody>
                             <tbody>
                                 <tr>
-                                    <td>Diego</td>
-                                    <td>+1 555-983-4457</td>
-                                    <td ">diego@example.com</td>
+                                    <td>Eduardo</td>
+                                    <td>+1 555-563-4457</td>
+                                    <td >eduardo@example.com</td>
+                                    <td>7</td>
                                 </tr>
                             </tbody>
                             <tbody>
                                 <tr>
-                                    <td>Diego</td>
+                                    <td>Alice</td>
                                     <td>+1 555-983-4457</td>
-                                    <td ">diego@example.com</td>
+                                    <td >alice@example.com</td>
+                                    <td>3</td>
                                 </tr>
                             </tbody>
                             <tbody>
                                 <tr>
-                                    <td>Diego</td>
+                                    <td>Miguel</td>
                                     <td>+1 555-983-4457</td>
-                                    <td ">diego@example.com</td>
+                                    <td >miguel@example.com</td>
+                                    <td>3</td>
                                 </tr>
                             </tbody>
                             </thead>
