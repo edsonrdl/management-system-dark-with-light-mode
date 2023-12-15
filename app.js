@@ -103,7 +103,7 @@ const fetchOrdersToday = async () => {
   }
 }
 
-const loadOrdersToday = async () => {
+const dashboardOrdersToday = async () => {
   const orders = await fetchOrdersToday();
 
   if (orders) {
@@ -111,7 +111,6 @@ const loadOrdersToday = async () => {
     tbodyOrdersRecentToday.innerHTML = '';
 
     orderValidate.forEach(order => {
-      console.log(order);
       const tr = document.createElement('tr');
       const trContent = `
         <td>${order.client}</td>
@@ -120,7 +119,6 @@ const loadOrdersToday = async () => {
       `;
       tr.innerHTML = trContent;
       tbodyOrdersRecentToday.appendChild(tr);
-      console.log(tbodyOrdersRecentToday); 
 
     });
   } else {
@@ -128,7 +126,40 @@ const loadOrdersToday = async () => {
   }
 }
 
-loadOrdersToday();
+dashboardOrdersToday();
+
+
+const tbodydashboardTopClientOrders = document.querySelector('#tbody-client-orders');
+
+const dashboardTopClientOrders = async () => {
+  const topClientorders = await fetchOrdersToday();
+
+  if (topClientorders) {
+    const topClientorderValidate=topClientorders.topClientOrdes;
+    console.log(topClientorderValidate);
+    tbodydashboardTopClientOrders.innerHTML = '';
+
+    topClientorderValidate.forEach(topClientorder => {
+      console.log(topClientorder);
+      const numeroTelefone = topClientorder.numberPhone.toString(); 
+      const numeroFormatado = `+1 ${numeroTelefone.slice(1, 4)}-${numeroTelefone.slice(4, 7)}-${numeroTelefone.slice(7)}`;
+      const tr = document.createElement('tr');
+      const trContent = `
+        <td>${topClientorder.client}</td>
+        <td>${numeroFormatado}</td>
+        <td>${topClientorder.email}</td>
+        <td>${topClientorder.amount}</td>
+        `;
+      tr.innerHTML = trContent;
+      tbodydashboardTopClientOrders.appendChild(tr);
+
+    });
+  } else {
+    console.error('Failed to load orders.');
+  }
+}
+
+dashboardTopClientOrders();
 
 
 
