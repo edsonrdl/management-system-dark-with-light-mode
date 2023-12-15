@@ -308,7 +308,7 @@ main .insigths > div.expenses span {
 
 }
 
-main .insigths > div.canceled span {
+main .insigths > div.canceled-progress span {
     background: red;
 
 }
