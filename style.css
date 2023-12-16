@@ -514,7 +514,47 @@ main .table:hover,main .table:hover,main .all-order-table:hover,main .all-orders
     color: var(--color-dark-variant);
     cursor: pointer;     
 }
+.container-get-btn-all-get-btn-number{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.button-filter-order-number{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#input-pedido{
+    height: 80%;
+    width: 200px;
+    padding: 0px 10px 0px 10px;
+    border-radius: 30px;
+    box-shadow: var(--box-shadow);
+    
+}
+input::placeholder {
+    text-align: center;
+  }
+ 
+#input-pedido::-webkit-inner-spin-button,
+#input-pedido::-webkit-outer-spin-button {
+  -webkit-appearance: none; 
+  margin: 0; 
+}
 
+.button-filter-order-number button{
+    background-color: transparent;
+
+}
+.button-filter-order-number .material-symbols-outlined{
+    background-color: transparent;
+    cursor: pointer;
+
+}
 
 .top-all-orders .dateFilter input[type="date"] {
     background: transparent;

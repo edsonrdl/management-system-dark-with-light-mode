@@ -111,7 +111,7 @@
                     <div class="canceled-progress">
                         <span class="material-symbols-outlined">
                             query_stats
-                            </span>
+                        </span>
                         <div class="middle">
                             <div class="left">
                                 <h3>Pedidos Cancelados</h3>
@@ -129,7 +129,7 @@
                     <div class="productivity">
                         <span class="material-symbols-outlined">
                             monitoring
-                            </span>
+                        </span>
                         <div class="middle">
                             <div class="left">
                                 <h3>Produtividade</h3>
@@ -144,7 +144,7 @@
                         </div>
                         <small class="text-muted">Últimas 24 horas</small>
                     </div>
-                 
+
                 </div>
                 <div class="container-recent-orders-top-client">
                     <div class="recent-orders table">
@@ -185,8 +185,16 @@
                         <h2>Selecione a data dos pedidos</h2>
                         <input type="date" class="dateFilter" onchange="filterOrderCalendar(this.value)">
                     </div>
-                    <div class="button-all-orders">
-                        <button id="btn-all-orders">Buscar Pedidos</button>
+                    <div class="container-get-btn-all-get-btn-number">
+                        <div class="button-all-orders">
+                            <button id="btn-all-orders">Buscar Pedidos</button>
+                        </div>
+                        <div class="button-filter-order-number">
+                            <input type="number" id="input-pedido" placeholder="Digite o número do pedido">
+                            <span onclick="searchOrderNumber()" class="material-symbols-outlined">
+                                search
+                            </span>
+                        </div>
                     </div>
                     <div class="all-order-table">
                         <table>

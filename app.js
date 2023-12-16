@@ -243,3 +243,38 @@ function loaditemsOrderClient(ItemsOrderClient, totalValueOrder) {
   }
 };
 
+
+const searchOrderNumber = async () => {
+  const inputOrder = document.getElementById('input-pedido');
+  const numberOrder = inputOrder.value;
+  const allOrdersResponse = await fetchOrders();
+  
+  if (allOrdersResponse && numberOrder) {
+    const allOrders = allOrdersResponse.orders;
+    const orderSearcher = allOrders.find(order => order.numberOrder == numberOrder);
+
+    orderSearcher && orderSearcherFunction(orderSearcher);
+  }
+};
+
+function orderSearcherFunction(orderSearcher) {
+  console.log(orderSearcher);
+
+  if (orderSearcher) {
+    const totalOrderValeu = document.querySelector('#total-order-value');
+    totalOrderValeu.innerText='';
+    tbodyAllOrders.innerHTML = '';
+    tbodyItemsOrder.innerHTML = '';
+    const tr = document.createElement('tr');
+    const trContent = `
+      <td>${orderSearcher.client}</td>
+      <td>${orderSearcher.numberOrder}</td>
+      <td class="${orderSearcher.status === 'CANCELED' ? 'canceled' : orderSearcher.status === 'PENDING' ? 'primary' : orderSearcher.status === 'CONCLUDED' ? 'success' : 'success'}">${orderSearcher.status}</td>
+      <td class="item-button" onclick="toggleItemOrder(${orderSearcher.id})">Ver Itens</td>`;
+    
+    tr.innerHTML = trContent;
+    tbodyAllOrders.appendChild(tr);
+    console.log(tbodyAllOrders);
+  }
+}
+
