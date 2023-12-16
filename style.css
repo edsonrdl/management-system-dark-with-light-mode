@@ -1,7 +1,7 @@
 :root {
     --color-phlox: #BA58EF;
     --color-back: #000000;
-    --color-silver:#CBCBCB;
+    --color-silver: #CBCBCB;
     --color-dim-gray: #727272;
     --color-success: #41f1b6;
     --color-warning: #ffbb55;
@@ -21,14 +21,16 @@
     --padding-1: 1.2rem;
     --box-shadow: 0 2rem 3rem var(--color-light);
 }
-.dark-theme-variables{
-    --color-background:#181a1e;
-    --color-white:#202528;
-    --color-dark:#edeffd;
-    --color-dark-variant:#a3dbcc;
-    --color-ligth:rgba(0,0,0,0.4);
-    --box-shadow:0 2rem 3rem var(--color-light)
+
+.dark-theme-variables {
+    --color-background: #181a1e;
+    --color-white: #202528;
+    --color-dark: #edeffd;
+    --color-dark-variant: #a3dbcc;
+    --color-ligth: rgba(0, 0, 0, 0.4);
+    --box-shadow: 0 2rem 3rem var(--color-light)
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -60,7 +62,7 @@ body {
     width: 100%;
     gap: 1rem;
     grid-template-columns: 1fr 3fr 1fr;
-    grid-template-areas:" aside main right " ;
+    grid-template-areas: " aside main right ";
 }
 
 a {
@@ -123,6 +125,7 @@ b {
 .canceled {
     color: red;
 }
+
 .danger {
     color: var(--color-dim-gray);
 }
@@ -139,7 +142,7 @@ aside {
     height: 100vh;
     position: fixed;
     grid-area: aside;
-    padding:5px;
+    padding: 5px;
 
 }
 
@@ -164,14 +167,17 @@ aside .logo img {
     clip-path: circle();
     background-color: var(--color-silver);
 }
-.logo h2{
+
+.logo h2 {
     color: var(--color-white);
     text-shadow: 1px 1px 2px #000;
 }
-.logo h2 span{
+
+.logo h2 span {
     color: var(--color-phlox);
 
 }
+
 aside .close {
     display: none;
 }
@@ -256,24 +262,27 @@ main .date {
     margin-top: 1rem;
     padding: 0.3rem 1.3rem;
 }
+
 main .date h1 {
-font-size: 1rem;
+    font-size: 1rem;
 }
 
 main .date input[type="date"] {
     background: transparent;
     color: var(--color-dark);
 }
-.disabled-content{
+
+.disabled-content {
     display: none;
 }
+
 main .insigths {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 5px;
 }
 
-main .insigths > div {
+main .insigths>div {
     background: var(--color-white);
     padding: 10px;
     border-radius: var(--card-border-radius);
@@ -282,11 +291,11 @@ main .insigths > div {
     transition: all 300ms ease;
 }
 
-main .insigths > div:hover {
+main .insigths>div:hover {
     box-shadow: none;
 }
 
-main .insigths > div span {
+main .insigths>div span {
     background: var(--color-phlox);
     padding: 0.5rem;
     font-size: 2rem;
@@ -294,30 +303,32 @@ main .insigths > div span {
     color: var(--color-white);
 }
 
-main .insigths > div.sales span {
+main .insigths>div.sales span {
     background: var(--color-warning);
 
 }
-main .insigths > div.expenses span {
+
+main .insigths>div.expenses span {
     background: var(--color-dim-gray);
 
 }
 
-main .insigths > div.income span {
+main .insigths>div.income span {
     background: var(--color-success);
 
 }
 
-main .insigths > div.expenses span {
+main .insigths>div.expenses span {
     background: var(--color-dim-gray);
 
 }
 
-main .insigths > div.canceled-progress span {
+main .insigths>div.canceled-progress span {
     background: red;
 
 }
-main .insigths > div.productivity span {
+
+main .insigths>div.productivity span {
     background: var(--color-phlox);
 
 }
@@ -333,12 +344,13 @@ main .insigths h3 {
     font-size: 1rem;
 
 }
+
 main .insigths h1 {
     font-size: 1rem;
 
 }
 
-.progress{
+.progress {
     display: flex;
     position: relative;
     width: 80px;
@@ -349,17 +361,27 @@ main .insigths h1 {
     flex-direction: column;
     align-items: center;
 }
-.circular-progress-sales,.circular-progress-expenses,.circular-progress-income,.circular-progress-canceled,.circular-progress-productivity{
+
+.circular-progress-sales,
+.circular-progress-expenses,
+.circular-progress-income,
+.circular-progress-canceled,
+.circular-progress-productivity {
     position: relative;
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background: conic-gradient(#BA58EF 3.6deg,#ffffff 0deg);
+    background: conic-gradient(#BA58EF 3.6deg, #ffffff 0deg);
     align-items: center;
     justify-content: center;
     display: flex;
 }
-.circular-progress-sales::before,.circular-progress-expenses::before,.circular-progress-income::before,.circular-progress-canceled::before,.circular-progress-productivity::before{
+
+.circular-progress-sales::before,
+.circular-progress-expenses::before,
+.circular-progress-income::before,
+.circular-progress-canceled::before,
+.circular-progress-productivity::before {
     content: "";
     position: absolute;
     width: 60px;
@@ -367,7 +389,12 @@ main .insigths h1 {
     border-radius: 50%;
     background-color: var(--color-white);
 }
-main .insigths .progress .progress-value-sales,.progress-value-expenses,.progress-value-income,.progress-value-canceled,.progress-value-productivity{
+
+main .insigths .progress .progress-value-sales,
+.progress-value-expenses,
+.progress-value-income,
+.progress-value-canceled,
+.progress-value-productivity {
     position: absolute;
     font-size: 20px;
     font-weight: 600;
@@ -425,20 +452,24 @@ main .insigths small {
     margin-top: 1rem;
     display: block;
 }
-.container-recent-orders-top-client{
+
+.container-recent-orders-top-client {
     display: grid;
     gap: 50px;
-    grid-template-columns:2fr 3fr;
+    grid-template-columns: 2fr 3fr;
     background-color: transparent;
 }
-main .recent-orders,main .top-clients,main .all-orders {
+
+main .recent-orders,
+main .top-clients,
+main .all-orders {
     margin-top: 1rem;
 
 }
 
 .table {
     margin-top: 2rem;
-    min-height:20px;
+    min-height: 20px;
     max-height: 300px;
     overflow: auto;
     background: var(--color-white);
@@ -448,11 +479,16 @@ main .recent-orders,main .top-clients,main .all-orders {
     box-shadow: var(--box-shadow);
     transition: all 300ms ease;
 }
-main .recent-orders h2,main .top-clients h2 ,main .all-orders h2{
+
+main .recent-orders h2,
+main .top-clients h2,
+main .all-orders h2 {
     margin: 10px;
 }
 
-main .recent-orders table,main .top-clients table,main .all-orders table{
+main .recent-orders table,
+main .top-clients table,
+main .all-orders table {
     background: transparent;
     width: 100%;
     border-radius: var(--card-border-radius);
@@ -462,46 +498,62 @@ main .recent-orders table,main .top-clients table,main .all-orders table{
     transition: all 300ms ease;
 
 }
-.button-all-orders{
-margin: 5px;
-background-color:transparent;
-height: 40px;
-border-radius: 30px;
-width: 150px;
-box-shadow: var(--box-shadow);
+
+.button-all-orders {
+    margin: 5px;
+    background-color: transparent;
+    height: 40px;
+    border-radius: 30px;
+    width: 150px;
+    box-shadow: var(--box-shadow);
 }
-.button-all-orders:hover{
-box-shadow: none;
+
+.button-all-orders:hover {
+    box-shadow: none;
 }
-.button-all-orders button{
+
+.button-all-orders button {
     width: 100%;
     height: 100%;
     font-size: 1rem;
     cursor: pointer;
     color: var(--color-white);
     border-radius: 30px;
- 
+
     background-color: var(--color-phlox);
 }
-main .table:hover,main .table:hover,main .all-order-table:hover,main .all-orders table:hover {
+
+main .table:hover,
+main .table:hover,
+main .all-order-table:hover,
+main .all-orders table:hover {
     box-shadow: none;
 }
-.recent-orders thead th,.top-clients thead th,.all-order-table thead th {
+
+.recent-orders thead th,
+.top-clients thead th,
+.all-order-table thead th {
     background-color: var(--color-white);
     height: 40px;
     position: sticky;
     top: 0;
     z-index: 5;
-  }
-  .recent-orders tbody, .top-clients tbody ,  .all-order-table tbody{
+}
+
+.recent-orders tbody,
+.top-clients tbody,
+.all-order-table tbody {
     overflow-y: auto;
     position: relative;
-  }
-  .recent-orders tbody tr,  .top-clients tbody tr,.all-order-table tbody tr {
+}
+
+.recent-orders tbody tr,
+.top-clients tbody tr,
+.all-order-table tbody tr {
     border-bottom: 1px solid #ddd;
-  }
-  
-.top-all-orders{
+}
+
+.top-all-orders {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -509,6 +561,7 @@ main .table:hover,main .table:hover,main .all-order-table:hover,main .all-orders
     justify-content: flex-start;
     gap: 10px;
 }
+
 .top-all-orders .dateFilter {
     display: inline-block;
     margin-bottom: 0.8rem;
@@ -517,9 +570,10 @@ main .table:hover,main .table:hover,main .all-order-table:hover,main .all-orders
     border-radius: var(--border-radius-1);
     box-shadow: var(--box-shadow);
     color: var(--color-dark-variant);
-    cursor: pointer;     
+    cursor: pointer;
 }
-.container-get-btn-all-get-btn-number{
+
+.container-get-btn-all-get-btn-number {
     height: 100%;
     width: 100%;
     display: flex;
@@ -527,35 +581,39 @@ main .table:hover,main .table:hover,main .all-order-table:hover,main .all-orders
     align-items: center;
     justify-content: space-between;
 }
-.button-filter-order-number{
+
+.button-filter-order-number {
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-#input-pedido{
+
+#input-pedido {
     height: 80%;
     width: 200px;
     padding: 0px 10px 0px 10px;
     border-radius: 30px;
     box-shadow: var(--box-shadow);
-    
-}
-input::placeholder {
-    text-align: center;
-  }
- 
-#input-pedido::-webkit-inner-spin-button,
-#input-pedido::-webkit-outer-spin-button {
-  -webkit-appearance: none; 
-  margin: 0; 
+
 }
 
-.button-filter-order-number button{
+input::placeholder {
+    text-align: center;
+}
+
+#input-pedido::-webkit-inner-spin-button,
+#input-pedido::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.button-filter-order-number button {
     background-color: transparent;
 
 }
-.button-filter-order-number .material-symbols-outlined{
+
+.button-filter-order-number .material-symbols-outlined {
     background-color: transparent;
     cursor: pointer;
 
@@ -563,11 +621,12 @@ input::placeholder {
 
 .top-all-orders .dateFilter input[type="date"] {
     background: transparent;
-  
+
 }
+
 main .all-order-table {
     margin-top: 2rem;
-    min-height:20px;
+    min-height: 20px;
     max-height: 200px;
     overflow: auto;
     background: var(--color-white);
@@ -580,7 +639,7 @@ main .all-order-table {
 }
 
 
-  main table tbody td {
+main table tbody td {
     background-color: var(--color-white);
     height: 40px;
     position: sticky;
@@ -592,18 +651,20 @@ main .productss-order {
     margin-top: 2rem;
 }
 
-#items-order{
-    font-size:1.5rem;
+#items-order {
+    font-size: 1.5rem;
     background: transparent;
 }
-#total-order-value{
+
+#total-order-value {
     font-size: 1rem;
     margin: 5px;
     color: var(--color-dim-gray);
 }
+
 .productss-all-order-table {
     margin-top: 2rem;
-    min-height:20px;
+    min-height: 20px;
     max-height: 400px;
     overflow: auto;
     background: var(--color-white);
@@ -614,6 +675,7 @@ main .productss-order {
     transition: all 300ms ease;
 
 }
+
 main .productss-all-order-table:hover {
     box-shadow: none;
 }
@@ -637,44 +699,49 @@ main .productss-order table {
 main .productss-order table:hover {
     box-shadow: none;
 }
+
 main .productss-all-order-table thead th {
     background-color: var(--color-white);
     height: 40px;
     position: sticky;
     top: 0;
     z-index: 1;
-  }
-  .productss-all-order-table tbody {
+}
+
+.productss-all-order-table tbody {
     overflow-y: auto;
     position: relative;
-  }
+}
+
 .productss-all-order-table tbody tr {
     border-bottom: 1px solid #ddd;
 
 }
 
 
-.products-button{
+.products-button {
     cursor: pointer;
     color: var(--color-secundary);
 }
-.products-button:hover{
+
+.products-button:hover {
     color: var(--color-secundary-hover);
-   
+
 }
 
-.item-button{
+.item-button {
     cursor: pointer;
     color: var(--color-phlox);
 }
-.item-button:hover{
+
+.item-button:hover {
     color: var(--color-dark-variant);
 }
 
 .right {
     margin-top: 1.4rem;
-    padding:30px;
-    grid-area:right;
+    padding: 30px;
+    grid-area: right;
 }
 
 .right .top {
@@ -725,7 +792,8 @@ main .productss-all-order-table thead th {
 .right .container-weekly h2 {
     margin-bottom: 0.8rem;
 }
-.right .container-weekly h3{
+
+.right .container-weekly h3 {
     margin-bottom: 0.8rem;
     text-align: cadetblue;
     color: var(--color-silver);
@@ -733,7 +801,7 @@ main .productss-all-order-table thead th {
 
 .right .container-weekly .weekly {
     background: var(--color-white);
-    padding:10px;
+    padding: 10px;
     border-radius: var(--card-border-radius);
     box-shadow: var(--box-shadow);
     transition: all 300ms ease;
@@ -742,21 +810,24 @@ main .productss-all-order-table thead th {
 .right .container-weekly .weekly:hover {
     box-shadow: none;
 }
-.container-graphic-bar-weekly{
+
+.container-graphic-bar-weekly {
     width: 100%;
     height: 130px;
 }
-.content-bars{
-display: flex;
-height: 100%;
-align-content: flex-end;
-flex-direction: row;
-justify-content: space-around;
-gap: 2px;
-width: 100%;
-border-bottom: 1px solid var(--color-phlox);
+
+.content-bars {
+    display: flex;
+    height: 100%;
+    align-content: flex-end;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 2px;
+    width: 100%;
+    border-bottom: 1px solid var(--color-phlox);
 }
-.bar-section{
+
+.bar-section {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -764,27 +835,32 @@ border-bottom: 1px solid var(--color-phlox);
     height: 100%;
     width: 30px;
 }
-.bar{
+
+.bar {
     width: 100%;
     background-color: var(--color-phlox);
 
 }
-.bar p{
-text-align: center;
+
+.bar p {
+    text-align: center;
 
 }
-.weekly-name{
+
+.weekly-name {
     width: 100%;
     height: 30px;
     text-align: center;
 
 }
-.weekly-name h2{
+
+.weekly-name h2 {
     font-size: 0.7rem;
     color: var(--color-dim-gray);
- 
+
 
 }
+
 .right .products-analytics {
     margin-top: 2rem;
 }
@@ -805,68 +881,78 @@ text-align: center;
 .right .products-analytics .products:hover {
     box-shadow: none;
 }
-.img-produtcs{
+
+.img-produtcs {
     width: 50px;
     clip-path: circle();
 }
 
-.description-product h1{
+.description-product h1 {
     font-size: 1rem;
     margin-top: 5px;
     color: var(--color-phlox);
-    
+
 }
-.description-product h2{
+
+.description-product h2 {
     font-size: 1rem;
 
-    
+
 }
-.description-product  b:first-child{
+
+.description-product b:first-child {
     font-size: 0.8rem;
     margin: 5px 0px 0px 5px;
     color: var(--color-info-dark);
- 
+
 }
 
-.description-product  p{
+.description-product p {
     font-size: 0.8rem;
     margin: 5px 0px 0px 5px;
 
     color: var(--color-back);
 }
+
 @media (max-width:1470px) {
-    .container{
+    .container {
         gap: 50px;
         grid-template-columns: 1fr 6fr;
         grid-template-rows: auto 1fr;
-        grid-template-areas:" aside right"
-                                "aside main";
+        grid-template-areas: " aside right"
+            "aside main";
     }
+
     .right {
         display: flex;
         flex-direction: row-reverse;
         justify-content: space-around;
         padding: 0px 30px 0px 0px;
     }
-    .products-analytics{
+
+    .products-analytics {
         display: flex;
         flex-direction: column;
     }
-    .description-product{
+
+    .description-product {
         display: flex;
         flex-direction: row;
     }
-    .right .products-analytics .products{
+
+    .right .products-analytics .products {
         display: flex;
         flex-direction: row;
         justify-content: center;
-       gap: 1px;
+        gap: 1px;
     }
+
     main {
         padding: 0px 30px 0px 0px;
     }
-    
+
 }
+
 @media screen and (max-width: 1200px) {
 
     aside .sidebar a {
@@ -874,55 +960,69 @@ text-align: center;
     }
 
     main .insigths {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; 
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 0;
     }
-    .sales,.expenses,.income,.canceled-progress,.productivity{
+
+    .sales,
+    .expenses,
+    .income,
+    .canceled-progress,
+    .productivity {
         margin-right: 30px;
     }
-.container-recent-orders-top-client{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
 
-}
+    .container-recent-orders-top-client {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+
+    }
+
     main .recent-orders {
         width: 94%;
     }
 }
-@media screen and (max-width: 1130px){
-    .container-recent-orders-top-client{
+
+@media screen and (max-width: 1130px) {
+    .container-recent-orders-top-client {
         display: flex;
         flex-direction: column;
     }
 
 }
-@media screen and (max-width: 1050px){
-    aside .logo h2 ,aside .sidebar h3{
+
+@media screen and (max-width: 1050px) {
+
+    aside .logo h2,
+    aside .sidebar h3 {
         display: none;
     }
-    
+
 
 }
-@media screen and (max-width: 860px){
+
+@media screen and (max-width: 860px) {
     .right {
         display: flex;
         flex-direction: column;
     }
 }
-@media screen and (max-width: 768px){
+
+@media screen and (max-width: 768px) {
 
     .container {
         width: 100%;
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column-reverse;
     }
 
     aside {
+        top: 0;
         position: fixed;
-        left: -100%;
         background: var(--color-white);
         width: 18rem;
         z-index: 3;
@@ -932,20 +1032,24 @@ text-align: center;
         display: none;
         animation: showMenu 400ms ease forwards;
     }
-@keyframes showMenu {
-    to{
-        left: 0;
+
+    @keyframes showMenu {
+        to {
+            left: 0;
+        }
+
     }
-    
-}
+
     aside .logo {
         margin-left: 1rem;
     }
-    aside .logo h2 ,aside .sidebar h3{
+
+    aside .logo h2,
+    aside .sidebar h3 {
         display: inline;
     }
 
-    aside .sidebar a{
+    aside .sidebar a {
         width: 100%;
         height: 3.4rem;
     }
@@ -954,34 +1058,44 @@ text-align: center;
         display: inline-block;
         cursor: pointer;
     }
-    main{
+
+    main {
         margin-top: 8rem;
-        padding: 0 1rem;
+        padding: 0 3.5rem 0px 0px;
     }
-    main .recent-orders{
+
+    main .recent-orders {
         position: relative;
-        margin: 3rem 0 0 0 ;
+        margin: 3rem 0 0 0;
         width: 100%;
     }
-    main .recent-orders table{
+
+    main .recent-orders table {
         width: 100%;
         margin: 0;
     }
-    .all-orders h2{
+
+    .all-orders h2 {
         font-size: 0.8rem;
     }
-    .recent-orders thead th, .top-clients thead th, .all-order-table thead th {
+
+    .recent-orders thead th,
+    .top-clients thead th,
+    .all-order-table thead th {
         font-size: 8px;
     }
-    main table tbody td{
+
+    main table tbody td {
         font-size: 7px;
-  
+
     }
-    .right{
-        width: 94%;
-        margin: 0 auto 4rem;
+
+    .right {
+        margin-top: 65px;
+        padding: 0 3.5rem 0px 0px;
     }
-    .right .top{
+
+    .right .top {
         position: fixed;
         top: 0;
         left: 0;
@@ -995,22 +1109,26 @@ text-align: center;
         z-index: 2;
         box-shadow: 0 1rem 1rem var(--color-light);
     }
-.right .top  .theme-toggler{
-        width:4.4rem ;
+
+    .right .top .theme-toggler {
+        width: 4.4rem;
         position: absolute;
         left: 66%;
-}   
-.right .profile .info{
-    display: none;
-}
-.right .top button{
-    display: inline-block;
-    background:  transparent;
-    color: var(--color-dark);
-    cursor: pointer;
-    left: 1rem;
-}
-.right .top button span{
-    font-size: 2rem;
-}
+    }
+
+    .right .profile .info {
+        display: none;
+    }
+
+    .right .top button {
+        display: inline-block;
+        background: transparent;
+        color: var(--color-dark);
+        cursor: pointer;
+        left: 1rem;
+    }
+
+    .right .top button span {
+        font-size: 2rem;
+    }
 }
