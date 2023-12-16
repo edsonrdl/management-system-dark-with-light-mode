@@ -185,16 +185,18 @@
                         <h2>Selecione a data dos pedidos</h2>
                         <input type="date" class="dateFilter" onchange="filterOrderCalendar(this.value)">
                     </div>
+                    <div class="button-all-orders">
+                        <button id="btn-all-orders">Buscar Pedidos</button>
+                    </div>
                     <div class="all-order-table">
                         <table>
                             <thead>
                                 <tr>
                                     <th>CLIENTE</th>
                                     <th>NÚMERO DO PEDIDO</th>
-                                    <th>DATA/HORA</th>
-                                    <th>STATUS</th>
+                                    <th>Status</th>
                                 </tr>
-                            <tbody id="tbody-orders-date-all">
+                            <tbody id="tbody-orders-all">
                             </tbody>
                             </thead>
                         </table>
@@ -207,12 +209,11 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Número de identificação</th>
-                                    <th>Nome products</th>
+                                    <th>Nome do item</th>
                                     <th>Valor</th>
                                     <th>Quantidade</th>
                                 </tr>
-                            <tbody id="tbody-orders-productss-all">
+                            <tbody id="tbody-orders-items-all">
                             </tbody>
                             </thead>
                         </table>

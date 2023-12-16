@@ -73,23 +73,10 @@ createCircularProgress(".circular-progress-income", ".progress-value-canceled", 
 createCircularProgress(".circular-progress-income", ".progress-value-productivity", valueProgressProductivity);
 
  
-//  Orders.forEach(order => {
-//     const tr=document.createElement('tr');
-//     const trContent=`
-//     <td>${}</td>
-//     <td>${}</td>
-//     <td>${}</td>
-//     <td class="${order.shipping==='Declined'?'danger':order.shipping==='pending'?'Warning':'primary'}">${}</td>
-//     <td class="primary">${}</td>`;
-//     tr.innerHTML=trContent;
-//     document.querySelector('table tbody').appendChild(tr);
-    
-//  });
-
 const orderToday = 'ordersToday.json';
 const tbodyOrdersRecentToday = document.querySelector('#tbody-orders-today');
 
-const fetchOrdersToday = async () => {
+const fetchOrders = async () => {
   try {
     const response = await fetch(orderToday);
     if (!response.ok) {
@@ -104,7 +91,7 @@ const fetchOrdersToday = async () => {
 }
 
 const dashboardOrdersToday = async () => {
-  const orders = await fetchOrdersToday();
+  const orders = await fetchOrders();
 
   if (orders) {
     const orderValidate=orders.orders;
@@ -114,7 +101,7 @@ const dashboardOrdersToday = async () => {
       const tr = document.createElement('tr');
       const trContent = `
         <td>${order.client}</td>
-        <td>${order.numberProduct}</td>
+        <td>${order.numberOrder}</td>
         <td class="${order.status === 'Cancelado' ? 'canceled' : order.status === 'Pendente' ? 'primary' : 'success'}">${order.status}</td>
       `;
       tr.innerHTML = trContent;
@@ -132,15 +119,13 @@ dashboardOrdersToday();
 const tbodydashboardTopClientOrders = document.querySelector('#tbody-client-orders');
 
 const dashboardTopClientOrders = async () => {
-  const topClientorders = await fetchOrdersToday();
+  const topClientorders = await fetchOrders();
 
   if (topClientorders) {
     const topClientorderValidate=topClientorders.topClientOrdes;
-    console.log(topClientorderValidate);
     tbodydashboardTopClientOrders.innerHTML = '';
 
     topClientorderValidate.forEach(topClientorder => {
-      console.log(topClientorder);
       const numeroTelefone = topClientorder.numberPhone.toString(); 
       const numeroFormatado = `+1 ${numeroTelefone.slice(1, 4)}-${numeroTelefone.slice(4, 7)}-${numeroTelefone.slice(7)}`;
       const tr = document.createElement('tr');
@@ -163,100 +148,88 @@ dashboardTopClientOrders();
 
 
 
-function showContentMain(contentId) {
-   const allContentMain = document.querySelectorAll('.main-contant');
-   allContentMain.forEach(contentMain => {
-    contentMain.classList.add('disabled-content');
-   });
+const tbodyAllOrders = document.querySelector('#tbody-orders-all');
+const ordersAllbtn=document.querySelector('#btn-all-orders');
 
-   const contentMainActive = document.getElementById(contentId);
-   contentMainActive.classList.remove('disabled-content');
-}
+const allOrdersClients=async()=>{
+  const allOrders = await fetchOrders();
+  if (allOrders) {
+    const allOrdersValidate=allOrders.orders;
+    tbodyAllOrders.innerHTML = ''
 
-
-
-
-const filterOrderCalendar = async (selectedDateCalendar) => {
-  try {
-    const dateObject = new Date(selectedDateCalendar);
-    dateObject.setUTCDate(dateObject.getUTCDate() + 1);
-
-    const formattedDate = formatDateCalendar(dateObject);
-    function formatDateCalendar(date) {
-      const day = date.getDate();
-      const month = date.getMonth() + 1; 
-      const year = date.getFullYear();
-
-      const formattedDay = day < 10 ? `0${day}` : day;
-      const formattedMonth = month < 10 ? `0${month}` : month;
-
-      return `${formattedDay}/${formattedMonth}/${year}`;
-    }
-
-    const url = `http://localhost:8080/order/orders-by-date?orderDate=${formattedDate}`;
-
-    const response = await fetch(url);
-    const ordersByDate = await response.json();
-    loadOrdersDate (ordersByDate);
-
-    return ordersByDate;
-  } catch (error) {
-    throw error; 
-  }
-};
-
-function loadOrdersDate (ordersByDate) {
-  const orders = ordersByDate;
-  tbodyOrdersDateAll.innerHTML = ''
-
-  orders.forEach(order => {
-    const orderTime = new Date(order.orderTime).toLocaleString();
+  allOrdersValidate.forEach(order => {
    const tr=document.createElement('tr');
    const trContent=`
-   <td>${order.client.name}</td>
+   <td>${order.client}</td>
     <td>${order.numberOrder}</td>
-   <td>${orderTime}</td>
-   <td class="${order.orderClientStatus === 'CANCELED' ? 'danger' : order.orderClientStatus === 'PENDING' ? 'primary' : order.orderClientStatus === 'CONCLUDED' ? 'success' : 'success'}">${order.orderClientStatus}</td>
+   <td class="${order.status === 'CANCELED' ? 'canceled' : order.status === 'PENDING' ? 'primary' : order.status === 'CONCLUDED' ? 'success' : 'success'}">${order.status}</td>
    <td class="item-button" onclick="toggleItemOrder(${order.id})">Ver Itens</td>`;
     tr.innerHTML=trContent;
-    document.querySelector('#tbody-orders-date-all').appendChild(tr);
-
+    tbodyAllOrders.appendChild(tr);
 
   });
+  
+  }
 }
-//Exibir itens do id pedido
+ordersAllbtn.addEventListener('click',allOrdersClients);
+
+
 const toggleItemOrder = async (idOrderClient)=> {
-  const urlItensOrderClient = `http://localhost:8080/order/${idOrderClient}/items-order`;
+  const idOrder = idOrderClient;
+  const allOrdersItems = await fetchOrders();
   
-  const responseUrlItensOrderClient= await fetch(urlItensOrderClient);
-  const ItemsOrderClient = await responseUrlItensOrderClient.json();
-
-  const urlTotalValueItens= `http://localhost:8080/order/${idOrderClient}/total-value-items`;
-  
-  const responseUrlTotalValueItens = await fetch(urlTotalValueItens);
-  const totalValueOrder = await responseUrlTotalValueItens.json();
+  if (allOrdersItems && idOrder) {
+    const allOrdersItemsValidate = allOrdersItems.orders;
 
 
-  loaditemsOrderClient(ItemsOrderClient,totalValueOrder);
-  
+    const orderItems= allOrdersItemsValidate.find(order => order.id === idOrder); 
+    const itens=orderItems.itens;
+
+
+
+    const totalOrderValue = sumItemValues(orderItems.itens);
+    const formattedTotal = formatCurrency(totalOrderValue);
+    loaditemsOrderClient(itens,formattedTotal);
+  }
+
+};
+const formatCurrency = (value) => {
+  return new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL'
+  }).format(value);
 };
 
+
+const sumItemValues = (items) => {
+  return items.reduce((total, item) => {
+    return total + (parseFloat(item.value) * item.quantity);
+  }, 0);
+};
+
+
+const tbodyItemsOrder = document.querySelector('#tbody-orders-items-all');
+
 function loaditemsOrderClient(ItemsOrderClient, totalValueOrder) {
-  tbodyOrderItemsAll.innerHTML = '';
+  console.log(ItemsOrderClient);
+  console.log(totalValueOrder);
+  tbodyItemsOrder.innerHTML = '';
 
   if (ItemsOrderClient.length > 0) {
     for (const itemOrder of ItemsOrderClient) {
+      console.log(itemOrder);
       const totalOrderValeu = document.querySelector('#total-order-value');
-      totalOrderValeu.innerText=`Total do Pedido R$ :${totalValueOrder}`;
+      totalOrderValeu.innerText=`Total do Pedido ${totalValueOrder}`;
 
       const tr = document.createElement('tr');
       const trContent = `
-        <td>${itemOrder.number}</td>
         <td>${itemOrder.name}</td>
         <td>${itemOrder.value}</td>
-        <td>${itemOrder.amount}</td>`;
+        <td>${itemOrder.quantity}</td>`;
       tr.innerHTML = trContent;
-      document.querySelector('#tbody-orders-items-all').appendChild(tr);
+      tbodyItemsOrder.appendChild(tr);
+      console.log(tbodyItemsOrder);
+
     }
   } else {
     const tr = document.createElement('tr');
@@ -264,10 +237,9 @@ function loaditemsOrderClient(ItemsOrderClient, totalValueOrder) {
       <td>Vazio</td>
       <td>Vazio</td>
       <td>Vazio</td>
-      <td>Vazio</td>
       <td>Total do pedido : vazio</td>`;
     tr.innerHTML = trContent;
-    document.querySelector('#tbody-orders-items-all').appendChild(tr);
+    tbodyItemsOrder.appendChild(tr);
   }
 };
 

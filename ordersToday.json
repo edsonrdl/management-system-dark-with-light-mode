@@ -1,44 +1,126 @@
 {
   "orders": [
     {
+      "id":23,
       "client": "Letícia",
-      "numberProduct": 856,
-      "status": "Concluído"
+      "numberOrder": 856,
+      "status": "Concluído",
+      "itens":[
+        {
+          "name":"Notebook",
+          "value":"1800",
+          "quantity":1
+          
+        }
+      ]
     },
     {
+      "id":3,
       "client": "Luís",
-      "numberProduct": 569,
-      "status": "Concluído"
+      "numberOrder": 569,
+      "status": "Concluído",
+      "itens":[
+        {
+          "name":"Televisão",
+          "value":"2300",
+          "quantity":1
+          
+        }
+      ]
     },
     {
+      "id":54,
       "client": "Juliana",
-      "numberProduct": 423,
-      "status": "Concluído"
+      "numberOrder": 423,
+      "status": "Concluído",
+      "itens":[
+        {
+          "name":"Câmera fotográfica",
+          "value":"800",
+          "quantity":1
+          
+        }
+      ]
     },
     {
+      "id":78,
       "client": "João",
-      "numberProduct": 212,
-      "status": "Pendente"
+      "numberOrder": 212,
+      "status": "Pendente",
+      "itens":[
+        {
+          "name":"Câmera fotográfica",
+          "value":"800",
+          "quantity":1
+          
+        },{
+          "name":"Lente de Câmera fotográfica",
+          "value":"200",
+          "quantity":3
+
+        }
+      ]
     },
     {
+      "id":787,
       "client": "Ana",
-      "numberProduct": 645,
-      "status": "Concluído"
+      "numberOrder": 645,
+      "status": "Concluído",
+      "itens":[
+        {
+          "name":"Telefone",
+          "value":"2800",
+          "quantity":1
+          
+        },{
+          "name":"Fone de ouvido",
+          "value":"80",
+          "quantity":1
+
+        }
+      ]
     },
     {
+      "id":4,
       "client": "Alice",
-      "numberProduct": 432,
-      "status": "Concluído"
+      "numberOrder": 432,
+      "status": "Concluído",
+      "itens":[
+        {
+          "name":"Telefone",
+          "value":"2800",
+          "quantity":1
+          
+        }
+      ]
     },
     {
+      "id":3,
       "client": "Gaby",
-      "numberProduct": 423,
-      "status": "Cancelado"
+      "numberOrder": 423,
+      "status": "Cancelado",
+      "itens":[
+        {
+          "name":"Telefone",
+          "value":"2800",
+          "quantity":1
+          
+        }
+      ]
     },
     {
+      "id":27,
       "client": "Evelyn",
-      "numberProduct": 733,
-      "status": "Concluído"
+      "numberOrder": 733,
+      "status": "Concluído",
+      "itens":[
+        {
+          "name":"Cafeteira",
+          "value":"600",
+          "quantity":1
+          
+        }
+      ]
     }
   ],
   "topClientOrdes":[

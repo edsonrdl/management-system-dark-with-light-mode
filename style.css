@@ -457,7 +457,27 @@ main .recent-orders table,main .top-clients table,main .all-orders table{
     transition: all 300ms ease;
 
 }
-
+.button-all-orders{
+margin: 5px;
+background-color:transparent;
+height: 40px;
+border-radius: 30px;
+width: 150px;
+box-shadow: var(--box-shadow);
+}
+.button-all-orders:hover{
+box-shadow: none;
+}
+.button-all-orders button{
+    width: 100%;
+    height: 100%;
+    font-size: 1rem;
+    cursor: pointer;
+    color: var(--color-white);
+    border-radius: 30px;
+ 
+    background-color: var(--color-phlox);
+}
 main .table:hover,main .table:hover,main .all-order-table:hover,main .all-orders table:hover {
     box-shadow: none;
 }
@@ -503,7 +523,7 @@ main .table:hover,main .table:hover,main .all-order-table:hover,main .all-orders
 main .all-order-table {
     margin-top: 2rem;
     min-height:20px;
-    max-height: 400px;
+    max-height: 200px;
     overflow: auto;
     background: var(--color-white);
     width: 100%;
@@ -530,6 +550,11 @@ main .productss-order {
 #items-order{
     font-size:1.5rem;
     background: transparent;
+}
+#total-order-value{
+    font-size: 1rem;
+    margin: 5px;
+    color: var(--color-dim-gray);
 }
 .productss-all-order-table {
     margin-top: 2rem;
@@ -592,6 +617,15 @@ main .productss-all-order-table thead th {
     color: var(--color-secundary-hover);
    
 }
+
+.item-button{
+    cursor: pointer;
+    color: var(--color-phlox);
+}
+.item-button:hover{
+    color: var(--color-dark-variant);
+}
+
 .right {
     margin-top: 1.4rem;
     padding:30px;
