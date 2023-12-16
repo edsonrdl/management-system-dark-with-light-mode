@@ -967,6 +967,16 @@ text-align: center;
         width: 100%;
         margin: 0;
     }
+    .all-orders h2{
+        font-size: 0.8rem;
+    }
+    .recent-orders thead th, .top-clients thead th, .all-order-table thead th {
+        font-size: 8px;
+    }
+    main table tbody td{
+        font-size: 7px;
+  
+    }
     .right{
         width: 94%;
         margin: 0 auto 4rem;
